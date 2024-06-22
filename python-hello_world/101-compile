@@ -1,0 +1,7 @@
+#!/bin/bash
+# Compiling the Python file stored in $PYFILE
+python3 -m py_compile "$PYFILE"
+# Renaming the compiled file to have the .pyc extension in the same directory
+compiled_file=$(echo "$PYFILE"c)
+mv "__pycache__/${PYFILE%.*}.cpython-38.pyc" "$compiled_file"
+rmdir "__pycache__"
