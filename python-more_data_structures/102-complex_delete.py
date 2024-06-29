@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 def complex_delete(a_dictionary, value):
-    keys_to_delete = [key for key in a_dictionary 
-            if a_dictionary[key] == value]
+    keys_to_delete = [key for key in a_dictionary if a_dictionary[key] == value]
     for key in keys_to_delete:
         del a_dictionary[key]
     return a_dictionary
@@ -15,7 +14,7 @@ if __name__ == "__main__":
         'ids': [1, 2, 3]
     }
     new_dict = complex_delete(a_dictionary, 'C')
-    print_sorted_dictionary =__import__('6-print_sorted_dictionary').print_sorted_dictionary
+    print_sorted_dictionary = __import__('6-print_sorted_dictionary').print_sorted_dictionary
     print_sorted_dictionary(a_dictionary)
     print("--")
     print_sorted_dictionary(new_dict)
