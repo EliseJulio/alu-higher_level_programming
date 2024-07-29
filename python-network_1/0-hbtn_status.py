@@ -1,18 +1,19 @@
 #!/usr/bin/python3
-"""Documented by Lsblack"""
+""" module uses another module to request to make request """
 import urllib.request
 
-url = 'https://intranet.hbtn.io/status'
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
-    '\n    AppleWebKit/537.36 (KHTML, like Gecko)'
-    '\n    Chrome/99.0.4844.84 Safari/537.36',
-}
 
-req = urllib.request.Request(url, headers=headers)
-with urllib.request.urlopen(req) as response:
-    content = response.read()
-    print("Body response:")
-    print("\t- type:", type(content))
-    print("\t- content:", content)
-    print("\t- utf8 content:", content.decode("utf-8"))
+"""making request to provided url"""
+if __name__ == "__main__":
+    """making request to provided url"""
+    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
+        html = response.read()
+        print('Body response:')
+        print("\t- type: {}".format(type(html)))
+        print("\t- content: {}".format(html))
+        """ the method i used is easy way for string manipulation 
+            to use a method that make use of the concept
+            print out html.decode('utf-8') with string formatting
+        """
+        temp = str(html)
+        print("\t- utf8 content: {}".format(temp[2:-1]))

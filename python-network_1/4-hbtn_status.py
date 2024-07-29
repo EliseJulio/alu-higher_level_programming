@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-"""Python script that fetchs."""
-
-
+""" module uses the request module
+    to send a request to server """
 import requests
+
+
 if __name__ == "__main__":
-    requ = requests.get('https://intranet.hbtn.io/status')
+    r = requests.get('https://intranet.hbtn.io/status')
     print("Body response:")
-    print("\t- type: {}".format(type(requ.text)))
-    print("\t- content: {}".format(requ.text))
+    data = r.text
+    print("\t- type: {}".format(type(data)))
+    print("\t- content: {}".format(data))
