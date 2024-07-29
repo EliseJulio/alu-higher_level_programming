@@ -1,18 +1,10 @@
 #!/usr/bin/python3
-"""Fetch a url"""
+"""Python script that fetchs."""
+
 
 import requests
-def fetch_status(url):  
-   response = requests.get(url)  
-   if url == 'https://intranet.hbtn.io/status':  
-      print("Body response:")  
-      print("- type:")  
-      print("- content: OK")  
-   else:  
-      print("Body response:")  
-      print("- type:")  
-      print("- content: 'Custom status'")  
-  
-
-fetch_status('https://intranet.hbtn.io/status')  
-fetch_status('http://0.0.0.0:5050/status')
+if __name__ == "__main__":
+    requ = requests.get('https://intranet.hbtn.io/status')
+    print("Body response:")
+    print("\t- type: {}".format(type(requ.text)))
+    print("\t- content: {}".format(requ.text))
