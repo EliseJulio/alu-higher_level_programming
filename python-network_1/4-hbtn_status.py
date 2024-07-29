@@ -1,13 +1,11 @@
 #!/usr/bin/python3
 """Fetch a url"""
 
-# File path: fetch_status.py
-
 import requests
-
 url = 'https://alu-intranet.hbtn.io/status'
 
-with requests.get(url) as response:
+if __name__ == "__main__":
+    response = requests.get(url)
     body = response.text
     print("Body response:")
     print("\t- type: {}".format(type(body)))
